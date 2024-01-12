@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+
+    <link rel="shortcut icon" href="watching-a-movie.png" type="image/x-icon">
+    <link rel="stylesheet" href="../pages/css/style-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <h2 style="color: chocolate;">Movie Poster Stdio</h2>
+        <h2><a href="/add"><i class="fas fa-plus" style="padding-right:10px"></i>Add Movie</a></h2>
+    </header>
+
+
+    <% record.map((val)=>{ %>
+
+
+        <div class="hero-container">
+            <div class="main-container">
+                <div class="poster-container">
+                    <a href="#"><img src="<%= val.poster %>" class="poster" /></a>
+                </div>
+                <div class="ticket-container">
+                    <div class="ticket__content">
+                        <h4 class="ticket__movie-title">
+                            <%= val.name %>
+                        </h4>
+                        <p class="ticket__movie-slogan">
+                            <%= val.desc %>
+                        </p>
+                        <p class="ticket__current-price">&#8377;<%= val.fprice %>
+                        </p>
+                        <p class="ticket__old-price">&#8377;<%= val.oprice %>
+                        </p>
+
+                        <a href="/editData?id=<%= val.id %>">
+                            <button class="ticket__buy-btn-1">Edit
+                            </button>
+                        </a>
+
+                        <a href="/deleteData?id=<%= val.id %>">
+                            <button class="ticket__buy-btn-2">Delete
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <% }) %>
+
+
+
+
+</body>
+
+</html>

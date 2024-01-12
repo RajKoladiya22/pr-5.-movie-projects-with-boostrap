@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+
+    <link rel="shortcut icon" href="watching-a-movie.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../pages/css/style.css">
+</head>
+
+<body>
+
+
+
+    <div class="wrapper flex_box">
+
+        <form method="post" action="/updateRecord" enctype="multipart/form-data">
+            <h1>Edit Data</h1>
+            <input type="hidden" name="id" value="<%= single.id %>" />
+            <div class="input">
+                <label>
+                    Movie Name:
+                </label>
+                <input class="name" type="text" name="name" value="<%= single.name %>">
+            </div>
+            <div class="input">
+                <label>
+                    Original Price :
+                </label>
+                <input type="text" name="oprice" value="<%= single.oprice %>">
+            </div>
+            <div class="input">
+                <label>
+                    Final Price :
+                </label>
+                <input type="text" name="fprice" value="<%= single.fprice %>">
+            </div>
+            <div class="input">
+                <label>
+                    Description :
+                </label>
+                <input type="text" name="desc" value="<%= single.desc %>">
+            </div>
+            <div class="input">
+                <label>
+                    Upload Movie Poster :
+                </label >
+                <img src="<%= single.poster %>" height="100" width="70" alt="">
+                <input type="file" name="poster" class="d-none">
+            </div>
+            <div class="button_wrapper">
+                <button type="submit" value="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+        
+    </div>
+    
+        
+    
+    <div class="cover"></div>
+   
+
+</body>
+
+</html>
